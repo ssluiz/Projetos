@@ -1,0 +1,325 @@
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --accent-color: #00cec9;
+    --text-color: #2d3436;
+    --light-text: #f5f6fa;
+    --background-gradient: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --border-radius: 16px;
+    --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.gradient-bg {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background: var(--background-gradient);
+    z-index: -1;
+    border-radius: 30px;
+    transform: rotate(-5deg);
+    filter: blur(20px);
+    opacity: 0.8;
+}
+
+.converter-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-header {
+    padding: 25px;
+    background: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    position: relative;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: var(--primary-color);
+    transform: skewY(-3deg);
+    z-index: -1;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+}
+
+.icon-box i {
+    font-size: 24px;
+    color: white;
+}
+
+.card-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.card-header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.converter-body {
+    padding: 30px 25px;
+}
+
+.input-section {
+    margin-bottom: 25px;
+}
+
+.input-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #dfe6e9;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.input-box input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+.currency-section {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.currency-selector {
+    flex: 1;
+}
+
+.currency-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.selector-box {
+    position: relative;
+    border: 2px solid #dfe6e9;
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.selector-box:hover {
+    border-color: var(--primary-color);
+}
+
+.flag-container {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.flag-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.selector-box select {
+    width: 100%;
+    padding: 15px 20px 15px 45px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    appearance: none;
+    cursor: pointer;
+}
+
+.selector-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.swap-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 15px rgba(0, 206, 201, 0.3);
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg);
+    background: #00b5b2;
+}
+
+.result-section {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.result-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.result-currency {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.result-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.rate-info {
+    font-size: 14px;
+    color: #636e72;
+}
+
+.convert-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+}
+
+.convert-btn:hover {
+    background: #5a4bc1;
+    transform: translateY(-2px);
+}
+
+.convert-btn:active {
+    transform: translateY(0);
+}
+
+.card-footer {
+    padding: 15px 25px;
+    background: #f1f2f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.update-info, .api-info {
+    font-size: 12px;
+    color: #636e72;
+}
+
+@media (max-width: 480px) {
+    .currency-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .swap-btn {
+        align-self: center;
+        margin: 10px 0;
+    }
+    
+    .converter-body {
+        padding: 20px 15px;
+    }
+    
+    .card-header {
+        padding: 20px 15px;
+    }
+}
