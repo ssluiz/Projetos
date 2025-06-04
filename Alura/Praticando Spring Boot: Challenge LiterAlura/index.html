@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="gradient-bg"></div>
+        
+        <div class="converter-card">
+            <div class="card-header">
+                <div class="icon-box">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h1>Conversor de Moedas</h1>
+                <p>Converta valores em tempo real</p>
+            </div>
+            
+            <div class="converter-body">
+                <div class="input-section">
+                    <label for="amount">Valor</label>
+                    <div class="input-box">
+                        <input type="number" id="amount" placeholder="0.00" min="0" step="0.01">
+                    </div>
+                </div>
+                
+                <div class="currency-section">
+                    <div class="currency-selector from-currency">
+                        <label>De</label>
+                        <div class="selector-box">
+                            <div class="flag-container">
+                                <img src="flags/br.svg" alt="BRL" id="from-flag">
+                            </div>
+                            <select id="from-currency">
+                                <option value="BRL">Real Brasileiro</option>
+                                <option value="USD">Dólar Americano</option>
+                                <option value="EUR">Euro</option>
+                                <option value="GBP">Libra Esterlina</option>
+                                <option value="JPY">Iene Japonês</option>
+                                <option value="CAD">Dólar Canadense</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <button id="swap-currencies" class="swap-btn" aria-label="Inverter moedas">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    
+                    <div class="currency-selector to-currency">
+                        <label>Para</label>
+                        <div class="selector-box">
+                            <div class="flag-container">
+                                <img src="flags/us.svg" alt="USD" id="to-flag">
+                                <img src="flags/br.svg" alt="BRL" id="to-flag">
+                                <img src="flags/eu.svg" alt="EUR" id="to-flag">
+                                <img src="flags/gb.svg" alt="GBP" id="to-flag">
+                                <img src="flags/jp.svg" alt="JPY" id="to-flag">
+                                <img src="flags/ca.svg" alt="CAD" id="to-flag">
+                            </div>
+                            <select id="to-currency">
+                                <option value="USD">Dólar Americano</option>
+                                <option value="BRL">Real Brasileiro</option>
+                                <option value="EUR">Euro</option>
+                                <option value="GBP">Libra Esterlina</option>
+                                <option value="JPY">Iene Japonês</option>
+                                <option value="CAD">Dólar Canadense</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-section">
+                    <div class="result-box">
+                        <span class="result-currency" id="to-currency-code">USD</span>
+                        <span class="result-value" id="result">0.00</span>
+                    </div>
+                    <div class="rate-info" id="rate-info">1 BRL = 0.20 USD</div>
+                </div>
+                
+                <button id="convert-btn" class="convert-btn">
+                    <i class="fas fa-sync-alt"></i> Converter
+                </button>
+            </div>
+            
+            <div class="card-footer">
+                <div class="update-info" id="last-update">Atualizado agora há pouco</div>
+                <div class="api-info">Cotações via ExchangeRate API</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
